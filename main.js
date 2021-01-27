@@ -8,7 +8,7 @@ if(edad>=limite && ciudad=="cdmx") {
         console.log("no puedes votar.");
     }
 */
-let autor = 'Miguel de Cervantes';
+/*let autor = 'Miguel de Cervantes';
 
 switch(autor) {
     case 'Miguel de Cervantes':
@@ -23,4 +23,14 @@ switch(autor) {
     default:
         console.log('No existe')
         break;
+}*/
+
+var fin=100;
+var inicio;
+var divisor=2;
+
+for(inicio=0; inicio<fin; inicio++){
+    if(inicio%divisor==0){
+        console.log(inicio);
+    }
 }
