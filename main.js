@@ -25,7 +25,7 @@ switch(autor) {
         break;
 }*/
 
-var fin=100;
+/*var fin=100;
 var inicio;
 var divisor=2;
 
@@ -33,4 +33,20 @@ for(inicio=0; inicio<fin; inicio++){
     if(inicio%divisor==0){
         console.log(inicio);
     }
+}
+*/
+
+var numero=100;
+var isPrime = true;
+
+while(numero>0){
+    for (var i = 2; i <= numero; i++) {
+        if (numero % i === 0 && i !== numero) {
+          isPrime = false;
+        }
+        numero--;
+      }
+      if(isPrime) {
+        console.log(counter);
+      }
 }
