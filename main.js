@@ -1,39 +1,7 @@
-/*function saludar(saludo, name) {
-    alert(saludo + ' usuario ' + name);
+var milista = [5, 57, 'Hola', true, 312312];
+var indice = Number(prompt('Que indice te muestro?'));
+if (indice>milista.length){
+    console.log('Fuera de rango')
+    indice = Number(prompt('El indice no existe. Pasame otro:'));
 }
-saludar('Hola', 'Pedro');*/
-
-let figura=(prompt('Que figura es:'));
-
-function cuadradorect(size1, size2, size3, size4) {
-    return(size1+size2+size3+size4);
-}
-
-function circulo(radio){
-    return(2*3.1416*radio);
-}
-
-function triangulo(size1, size2, size3) {
-    return(size1+size2+size3);
-}
-
-switch (figura){
-
-    case 'cuadrado':
-        console.log(cuadradorect(4,4,4,4));
-        break;
-
-    case 'circulo':
-        console.log(circulo(50));
-        break;
-
-    case 'triangulo':
-        console.log(triangulo(9,2,3));
-        break;
-
-    default:
-        alert("no tengo esa figura");
-        break;
-
-}
-
+console.log(milista[indice]);
