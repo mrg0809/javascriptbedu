@@ -45,11 +45,22 @@ function Agregar(){
 }
 
 Agregar();
+
+
+console.log(Object.values(lista));
+
+
+
+
+
+
 /*
 let update=Object.assign(...lista.map(item=> ({[item.name.charAt(0).toUpperCase() + item.name.slice(1)]:item.total})))
 
 console.log(update);*/
 
+
+/*
     lista.forEach((element) => {
         let nombre = element.nombre;
         let edad = element.edad;
@@ -57,6 +68,6 @@ console.log(update);*/
         let grupo = element.grupo;
         console.log(`Nombre: ${nombre}. Edad: ${edad}. Grado: ${grado}. Grupo: ${grupo}.`);
     })
-
+*/
 
 
