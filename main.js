@@ -1,73 +1,28 @@
-/*let Person = function(name, age, gender, tel) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.tel = tel;
-
-    this.presenta = () => {
-        alert(`Nombre: ${name}, Edad: ${age}, Genero: ${gender}, Tel: ${tel}`)
-    }
-    }
-
-let Juan = new Person('Marcelo', 39, 'M', 6643654383);
-let Jose = new Person('Juan', 38, 'M', 3310040321);
-
-let buscar = prompt('Buscar nombre:');*/
-
 let lista = [];
+let opcion = 1;
+while (opcion >= 1 && opcion <= 4){
+    opcion = Number(prompt('1 AGREGAR\n 2 ELIMINAR\n 3 BUSCAR ELEMENTO\n 4 IMPRIMIR LISTA\n Salir(Cualquier otro valor)'))
+    switch(opcion){
+        case 1:
+            lista.push(prompt('Que elemento deseas agregar?'));
+            break;
+        case 2:
+            lista.splice(lista.lastIndexOf(prompt('Que elemento deseas eliminar')),1)
+            break;
+        case 3:
+            if(lista.indexOf(prompt('Que elemento deseas saber si existe:')) == -1){
+                console.log('NO EXISTE');
+            }
+            else{
+                console.log('SI EXISTE');
+            }
+            break;
+        case 4:
+            console.log(lista.toString());
+            break;
+        default:
+            break;
 
-class Persona {
-    constructor(nombre, edad){
-        this.nombre = nombre;
-        this.edad = edad;
     }
 }
-
-class Alumno extends Persona {
-    constructor(nombre, edad, grado, grupo){
-        super(nombre, edad);
-        this.grado = grado;
-        this.grupo = grupo;
-    }
-}
-
-function Agregar(){
-    let respuesta = 'Y';
-    while(respuesta=='Y'){
-        let nombre = prompt('Nombre:');
-        let edad = prompt('Edad:');
-        let grado = prompt('Grado:');
-        let grupo = prompt('Grupo:');
-        let nuevo = new Alumno(nombre, edad, grado, grupo);
-        lista.push(nuevo);
-        respuesta = prompt('Deseas agregar un nuevo Alumno? Y/N');
-    }
-}
-
-Agregar();
-
-
-console.log(Object.values(lista));
-
-
-
-
-
-
-/*
-let update=Object.assign(...lista.map(item=> ({[item.name.charAt(0).toUpperCase() + item.name.slice(1)]:item.total})))
-
-console.log(update);*/
-
-
-/*
-    lista.forEach((element) => {
-        let nombre = element.nombre;
-        let edad = element.edad;
-        let grado = element.grado;
-        let grupo = element.grupo;
-        console.log(`Nombre: ${nombre}. Edad: ${edad}. Grado: ${grado}. Grupo: ${grupo}.`);
-    })
-*/
-
-
+alert('FIN');
