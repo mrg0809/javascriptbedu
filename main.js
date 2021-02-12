@@ -1,73 +1,52 @@
-/*let Person = function(name, age, gender, tel) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.tel = tel;
-
-    this.presenta = () => {
-        alert(`Nombre: ${name}, Edad: ${age}, Genero: ${gender}, Tel: ${tel}`)
-    }
-    }
-
-let Juan = new Person('Marcelo', 39, 'M', 6643654383);
-let Jose = new Person('Juan', 38, 'M', 3310040321);
-
-let buscar = prompt('Buscar nombre:');*/
-
-let lista = [];
-
-class Persona {
-    constructor(nombre, edad){
-        this.nombre = nombre;
-        this.edad = edad;
-    }
-}
-
-class Alumno extends Persona {
-    constructor(nombre, edad, grado, grupo){
-        super(nombre, edad);
-        this.grado = grado;
-        this.grupo = grupo;
-    }
-}
-
-function Agregar(){
-    let respuesta = 'Y';
-    while(respuesta=='Y'){
-        let nombre = prompt('Nombre:');
-        let edad = prompt('Edad:');
-        let grado = prompt('Grado:');
-        let grupo = prompt('Grupo:');
-        let nuevo = new Alumno(nombre, edad, grado, grupo);
-        lista.push(nuevo);
-        respuesta = prompt('Deseas agregar un nuevo Alumno? Y/N');
-    }
-}
-
-Agregar();
-
-
-console.log(Object.values(lista));
-
-
-
-
-
-
 /*
-let update=Object.assign(...lista.map(item=> ({[item.name.charAt(0).toUpperCase() + item.name.slice(1)]:item.total})))
+var numbers = [3, 4, 6, 7, 8, 93, 4];
+var doubles = [];
 
-console.log(update);*/
+for(var i = 0; i < numbers.length; i++) {
+doubles.push(numbers[i] * 2);
+}
 
-
-/*
-    lista.forEach((element) => {
-        let nombre = element.nombre;
-        let edad = element.edad;
-        let grado = element.grado;
-        let grupo = element.grupo;
-        console.log(`Nombre: ${nombre}. Edad: ${edad}. Grado: ${grado}. Grupo: ${grupo}.`);
-    })
+console.log(numbers);
+console.log(doubles);
 */
+
+// nombre edad y hobby[]
+
+/*let numeros = [3,4,6,7,8,93,4];
+
+const doble = numeros.map((current, index, array) => {
+    if (index % 2){
+        return current * 2
+    }
+});
+*/
+
+
+//REDUCE EJEMPLO
+const alumnos = [
+    { nombre: 'Maria', calificaciones: [9,9,7,8,10] },
+    { nombre: 'Antonio', calificaciones: [9,8,7,8,10] },
+    { nombre: 'Juan', calificaciones: [9,9,7,8,2] },
+    { nombre: 'Luis', calificaciones: [9,9,7,8] },
+    { nombre: 'Ana', calificaciones: [9,9,7,8,10] },
+    { nombre: 'Maria', calificaciones: [9,9,8,10,5] },
+    { nombre: 'Pedro', calificaciones: [7,9,7,8,10] },
+    { nombre: 'Julio', calificaciones: [6,0,7,8,10] },
+]
+
+var cuadrodehonor = alumnos.reduce((p,c) => {
+    if ((c.calificaciones.reduce((c1,c2) => c1+c2) / 5) > 8) {
+        p = [...p, c] //Esto o push.
+    }
+    return p;
+}, []);
+
+console.log(cuadrodehonor);
+
+
+
+
+
+
 
 
