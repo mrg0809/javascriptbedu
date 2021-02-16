@@ -1,23 +1,60 @@
 let buscar;
-let registrar = new Lista();
+let nombre;
+let apellido;
+let telefono;
+let domicilio;
+let telcasa;
+let email;
+let nuevo;
+const registro = [];
+
+class Persona {
+    constructor(nombre, apellido, telefono, domicilio, telcasa, email){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.domicilio = domicilio;
+        this.telcasa = telcasa;
+        this.email = email;
+    }
+    
+    imprimir(){
+        console.log(` Nombre: ${this.nombre} ${this.apellido}/n Telefono: ${this.telefono}/n Domicilio: ${this.domicilio}/n Email: ${this.email}`);
+    }
+    
+    agregar(){
+        
+    }
+    
+    filtrar(){
+
+    }
+}
+
 
 do{
-    opcion = Number(prompt(' 1. Agregar contacto. \n 2. Buscar contacto. \n 3. Eliminar contacto. \n 4.Modificar contacto.'))
+    opcion = Number(prompt(' 1. Agregar contacto. \n 2. Buscar contacto. \n 3. Eliminar contacto. \n 4. Modificar contacto.'))
     switch(opcion){
         case 1: 
-            let nombre = prompt('Nombre:');
-            let apellido = prompt('Apellido:');
-            let telefono = prompt('Telefono:');
-            let domicilio = prompt('Domicilio:');
-            let telcasa = prompt('Tel Casa:');
-            let email = prompt('Email:');
-            let nuevo = new Datos(nombre, apellido, telefono, domicilio, telcasa, email);
-            registrar.agregaRegistro(nuevo);
+            nombre = prompt('Nombre:');
+            apellido = prompt('Apellido:');
+            telefono = prompt('Telefono:');
+            domicilio = prompt('Domicilio:');
+            telcasa = prompt('Tel Casa:');
+            email = prompt('Email:');
+            nuevo = new Persona(nombre, apellido, telefono, domicilio, telcasa, email);
+            registro.push(nuevo);
             break;
 
         case 2:
             buscar = prompt('Escribe el Nombre que quieres buscar:');
-            registrar.buscar(buscar);
+            var resultado = registro.filter((n, a) => {
+                if (n == buscar){
+                    n = [...n, a]
+                }
+                return n;
+            });
+            console.log(resultado);
             break;
 
         case 3:
