@@ -48,13 +48,13 @@ do{
 
         case 2:
             buscar = prompt('Escribe el Nombre que quieres buscar:');
-            var resultado = registro.filter((n, a) => {
-                if (n == buscar){
-                    n = [...n, a]
-                }
-                return n;
-            });
-            console.log(resultado);
+            var resultado = registro.filter(x => x.nombre == buscar);
+            if(resultado.length < 1){
+                console.log('No hay coincidencias.');
+            }
+            else{
+                console.log(resultado);
+            }
             break;
 
         case 3:
