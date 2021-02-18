@@ -21,16 +21,7 @@ class Persona {
     imprimir(){
         console.log(` Nombre: ${this.nombre} ${this.apellido}/n Telefono: ${this.telefono}/n Domicilio: ${this.domicilio}/n Email: ${this.email}`);
     }
-    
-    agregar(){
-        
-    }
-    
-    filtrar(){
-
-    }
 }
-
 
 do{
     opcion = Number(prompt(' 1. Agregar contacto. \n 2. Buscar contacto. \n 3. Eliminar contacto. \n 4. Modificar contacto.'))
@@ -47,6 +38,7 @@ do{
             break;
 
         case 2:
+            //Se filtra y se muestran resultados de busqueda
             buscar = prompt('Escribe el Nombre que quieres buscar:');
             var resultado = registro.filter(x => x.nombre == buscar);
             if(resultado.length < 1){
@@ -58,6 +50,23 @@ do{
             break;
 
         case 3:
+            //Obtengo los index de los elementos que coincidan con la busqueda para preguntar cual borrar.
+            buscar = prompt('Escribe el Nombre que deseas borrar:');
+            var index = registro.map((e, i) => e.nombre == buscar ? i : undefined).filter(x => x);
+            if(index.length > 1){
+                //Muestra resultados si estan repetidos para escoger cual borrar.
+                console.log(registro.map((e, i) => e.nombre == buscar ? e : undefined).filter(x => x));
+                let borrar = prompt('Cual deseas borrar? (1,2,3...)');
+                registro.splice(index[borrar], 1);
+            }
+            else if (index.length == 1){
+                registro.splice(index[0], 1);
+                alert('Contacto Borrado.');
+            }
+            else {
+                alert('No hay coincidencias.')
+            }
+            break;
 
         case 4:
 
